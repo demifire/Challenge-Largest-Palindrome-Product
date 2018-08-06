@@ -22,4 +22,22 @@ describe("Find The Largest Palindrome Product", function () {
     //
     //
   });
+
+  it("of two 4 digit numbers", function () {
+    var product = findPalindromeProduct(4);
+
+    expect(product.palindromeNumber).to.equal(99000099);
+    // add your tests here
+    //
+    //
+  });
+
+  it("of two 5 digit numbers", function () {
+    var product = findPalindromeProduct(5);
+
+    expect(product.palindromeNumber).to.equal(9966006699);
+    // add your tests here
+    //
+    //
+  });
 });

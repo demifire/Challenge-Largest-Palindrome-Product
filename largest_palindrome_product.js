@@ -6,12 +6,39 @@
  *                   the palindromeNumber and the palindromeNumber itself.
  */
 module.exports = function(digits){
-  var factor_0 = 0;
-  var factor_1 = 0;
-  var palindromeNumber = 0;
+  
+  function setTime(initial, number, variance){
+    time = '' + initial;
+    for( let d = 0; d < digits - variance; d++) {
+      time += number;
+    }
+    return time;
+  }
 
-  // do your work here
+  let start = setTime('', 9, 0);
 
+  let factor_0 = parseInt(start);
+  let factor_1 = parseInt(start);
+  let palindromeNumber, product;
+  let thisNum = 0;
+
+    const setLargest = () => {
+      for( let i = factor_1; i > factor_1-319; i-- ) {
+        for( let j = factor_0; j > factor_0-21; j-- ) {
+          product = ( i * j ) + '';
+  
+          let reversedNum = product.split("").reverse().join('');
+          if( product === reversedNum ) {
+            if( parseInt(thisNum) < parseInt(product) ) {
+              thisNum = parseInt(product);
+            }
+          }
+        }
+      }
+    }
+  
+    setLargest();
+    palindromeNumber = thisNum;
 
 
   return {
